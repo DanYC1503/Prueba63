@@ -2,7 +2,11 @@
 
 <div>
     <label for="cedulaInput">Buscar Cédula:</label>
-    <input type="text" id="cedulaInput" [(ngModel)]="cedula" placeholder="Ingrese la cédula" (input)="buscarCedula()" />
+    <form>
+      
+      <input type="text" id="cedulaInput" placeholder="Ingrese la cédula" />
+      <button (click)="buscarCedula()" name="btn">Buscar</button>
+    </form>
   </div>
   
   <table *ngIf="deudas.length > 0">
