@@ -1,37 +1,30 @@
 <h1>App Home </h1>
 
 <div>
-    <label for="cedulaInput">Buscar Cédula:</label>
-    <form>
-      
-      <input type="text" id="cedulaInput" placeholder="Ingrese la cédula" />
-      <button (click)="buscarCedula()" name="btn">Buscar</button>
-    </form>
-  </div>
+  <label for="cedulaInput">Buscar Cédula:</label>
+
+    <input type="text" id="cedulaInput" [(ngModel)]="cedula" placeholder="Ingrese la cédula" />
+    <button type="button" (click)="buscarCedula()" name="btn">Buscar</button>
   
-  <table *ngIf="deudas.length > 0">
-    <thead>
-      <tr>
-        <th>Código</th>
-        <th>Número</th>
-        <th>Total</th>
-        <th>Fecha de Emisión</th>
-        <th>Detalles</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let deuda of deudas">
-        <td>{{ deuda.codigo }}</td>
-        <td>{{ deuda.numero }}</td>
-        <td>{{ deuda.total }}</td>
-        <td>{{ deuda.fechaEmision | date:'dd/MM/yyyy' }}</td>
-        <td>{{ deuda.detalles }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <div *ngIf="deudas.length === 0">
-    <p>No se encontraron deudas asociadas a la cédula ingresada.</p>
-  </div>
-  
-  
+</div>
+
+<table *ngIf="deudas.length > 0">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Número</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let deuda of deudas">
+      <td>{{ deuda.codigo }}</td>
+      <td>{{ deuda.numero }}</td>
+      <td>{{ deuda.total }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!deudas || deudas.length === 0">
+  <p>No se encontraron deudas asociadas a la cédula ingresada.</p>
+</div>

@@ -1,18 +1,90 @@
-div {
-    margin: 20px;
-  
-    label {
-      font-weight: bold;
-      margin-right: 10px;
-    }
-  
-    input {
-      padding: 5px;
-      margin-right: 10px;
-    }
-  
-    p {
-      margin-top: 10px;
-    }
-  }
-  
+/* Style for the overall container */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+/* Style for the form section */
+form {
+  margin-top: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  padding: 8px;
+  width: 200px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style for the button with hover effect */
+button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+
+}
+
+button:hover {
+  background-color: #0056b3; /* Change the background color on hover */
+}
+
+
+/* Style for the table section */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Style for the message section */
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffc107;
+  color: #333;
+  border: 1px solid #e0a800;
+  border-radius: 4px;
+}
+
+/* Hide the message section if no messages */
+.message.hide {
+  display: none;
+}

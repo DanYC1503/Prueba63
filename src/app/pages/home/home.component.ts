@@ -8,17 +8,19 @@ import { DeudasServiceService } from 'src/app/services/deudas-service.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  cedula?: string ;
+  cedula?: string;
   deudas: any[] = [];
 
-  constructor(private deudasService: DeudasServiceService) {
-    
-  }
+  constructor(private deudasService: DeudasServiceService) {}
 
   buscarCedula() {
     if (this.cedula) {
-      this.deudasService.getDeudasPorCedula(this.cedula)
-        
+      this.deudasService.getDeudasPorCedula(this.cedula).subscribe(data => {
+            console.log('Data received:', data);
+            this.deudas = data;
+          }
+          
+        );
     }
   }
 }
